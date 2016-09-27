@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+		<title>Python Project</title>
+		<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+	</head>
+	<body>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					<p>{{ message }}</p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		<h1>Update your account:</h1>
+		<p>First Name: {{ user['first_name'] }}</p>
+		<p>Last Name: {{ user['last_name'] }}</p>
+		<p>Email: {{ user['email'] }}</p>
+		<hr>
+		<br>
+		<form action='/update/update_user' method='post'>
+			<label for="first_name">First Name: <input type="text" name="first_name" id="first_name"></label><br><br>
+			<label for="last_name">Last Name: <input type="text" name="last_name" id="last_name"></label><br><br>
+			<label for="email">Email: <input type="text" name="email" id="email"></label><br><br>
+			<label for="password">Password: <input type="password" name="password" id="password"></label><br><br>
+			<label for="c_password">Confirm password: <input type="password" name="c_password" id="c_password"></label><br><br>
+			<input class='button' type="submit" value="Update info">
+		</form>
+	</body>
+</html>
+
