@@ -1,16 +1,76 @@
-html, body {
-  font-family: monaco;
-  text-align: center;
+* {
+	padding: 0px;
+	margin:0px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 
-.log_reg {
-	display: inline-block;
-	text-align: left;
-	width: 305px;
+
+body {
+	width:auto;
+	height: auto;
 }
+
 
 .button{
 	width: 300px;
 	margin-bottom: 10px;
 	font-size: 20px;
 }
+
+h2 {
+	color: white;
+	vertical-align: right;
+}
+
+p {
+	font-size: 30px;
+}
+
+#header {
+	display: relative;
+	width: auto;
+	height: 100px;
+}
+
+.direct {
+	width: 300px;
+	padding-top: 20px;
+}
+
+.weather {
+	display: inline-block;
+	vertical-align: left;
+}
+.logo {
+	display: inline-block;
+	position: absolute;
+	right: 200px;
+}
+
+.container {
+	background: rgba(255, 255, 255, 0.5);
+	padding: 25px;
+	border-radius: 10px;
+/*	width: 50px;*/
+	height: 600px;
+}
+
+.hello{
+	background: rgba(255, 255, 255, 0.7);
+	border-radius: 10px;
+	width: 95%;
+
+}
+
+.row{
+	background: rgba(255, 255, 255, 0.7);
+	padding: 40px;
+	border-radius: 10px;
+	opacity: 1.0;
+	height:450px;
+	width: 95%;
+	display: inline-block;
+}
+

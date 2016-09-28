@@ -1,0 +1,100 @@
+* {
+	padding: 0px;
+	margin:0px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+
+body {
+	width:auto;
+	height: auto;
+	background: url('http://i.imgur.com/C3na3Bp.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+
+.button{
+	width: 300px;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
+.box{
+	background: rgba(255, 255, 255, 0.7);
+	padding-top: 10px;
+	padding-left: 25px;
+	border-radius: 10px;
+	opacity: 1.0;
+	height:auto;
+	width: 95%;
+	display: inline-block;
+}
+
+.log {
+	display: inline-block;
+	width: 45%;
+	vertical-align: top;
+
+}
+
+.reg {
+	display: inline-block;
+	width: 45%;
+}
+
+h2 {
+	color: gray;
+	vertical-align: right;
+}
+
+p {
+	font-size: 30px;
+}
+
+#header {
+	display: relative;
+	width: auto;
+	height: 100px;
+}
+
+.direct {
+	width: 300px;
+	padding-top: 20px;
+}
+
+.weather {
+	display: inline-block;
+	vertical-align: left;
+}
+.logo {
+	display: inline-block;
+	position: absolute;
+	right: 200px;
+}
+
+.container {
+	background: rgba(255, 255, 255, 0.5);
+	padding: 20px;
+	border-radius: 10px;
+/*	width: 50px;*/
+	height: 600px;
+}
+
+.hello{
+	background: rgba(255, 255, 255, 0.7);
+	border-radius: 10px;
+	width: 95%;
+
+}
+
+.row {
+	height:70px;
+}
+
+
+
+

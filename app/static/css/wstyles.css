@@ -1,0 +1,91 @@
+* {
+	padding: 0px;
+	margin:0px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+
+body {
+	width:auto;
+	height: auto;
+
+}
+
+.button{
+	width: 300px;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
+h2 {
+	color: white;
+	vertical-align: right;
+
+}
+
+p {
+	font-size: 30px;
+}
+
+#header {
+	display: relative;
+	width: auto;
+	height: 100px;
+}
+
+.weather {
+	display: inline-block;
+	vertical-align: left;
+}
+.logo {
+	display: inline-block;
+	position: absolute;
+	right: 200px;
+}
+
+.direct {
+	width: 300px;
+	padding-top: 20px;
+}
+
+.container {
+	background: rgba(255, 255, 255, 0.5);
+	padding: 25px;
+	border-radius: 10px;
+/*	width: 50px;*/
+	height: 600px;
+}
+
+.hello{
+	background-color: white;
+	border-radius: 10px;
+	width: 80%;
+
+}
+
+.row{
+	background: rgba(255, 255, 255, 0.7);
+	padding: 40px;
+	border-radius: 10px;
+	opacity: 1.0;
+	height:550px;
+	width: 95%;
+	display: inline-block;
+}
+
+.info {
+	width:50%;
+	height:95%;
+	background-color: red;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.map {
+	width: 45%;
+	height:95%;
+	background-color: blue;
+	display: inline-block;
+}

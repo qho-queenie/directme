@@ -1,9 +1,12 @@
 <!doctype html>
 <html lang='en'>
 	<head>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
-		<title>Python Project</title>
+		<title>DirectMe</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>       
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../static/css/lstyles.css">
 	</head>
 	<body>
 		{% with messages = get_flashed_messages() %}
@@ -13,31 +16,99 @@
 				{% endfor %}
 			{% endif %}
 		{% endwith %}
-		<div class="log_reg">
+	<div id='header'>
+		<div class='logo'>
+			<img class='direct' src="http://i.imgur.com/n26eoj9.png">
+		</div>
+	</div>	
+
+
+
+	<div class='container'>
+		<div class='box'>
+		<div class="log">
 			<h2>Login</h2>
-			<form action='/login' method='POST'>
-				<label for="email">Email: <input type="text" name="email" id="email"></label><br><br>
-				<label for="password">Password: <input type="password" name="password" id="password"></label><br><br>
-				<input class='button' type="submit" value="Login">
+		<form action='/login' method='POST'>
+		  <div class="row">
+		    <form class="col s6">
+		      <div class="row">
+		        <div class="input-field col s6">
+		          <input id="email" type="email" class="validate">
+		          <label for="email" data-error="wrong" data-success="right">Email</label>
+		        </div>
+		      </div>
+		    </form>
+		  </div>
+
+		  <div class="row">
+		    <form class="col s6">
+		      <div class="row">
+		        <div class="input-field col s12">
+		          <input id="password" type="password" class="validate">
+		          <label for="password">Password</label>
+		        </div>
+		      </div>
+		    </form>
+		  </div>
+		  		<a class="waves-effect waves-light btn" type="submit" value="Login">Login</a>
+<!-- 				<input class='button' type="submit" value="Login"> -->
 			</form>
 		</div>
-		<hr>
-		<div class="log_reg">
+
+
+		<div class="reg">
 			<h2>Register</h2>
 			<form action='/register' method='POST'>
-				<label for="name">Name: <input type="text" name="name" id="name"></label><br><br>
-				<label for="email">Email: <input type="text" name="email" id="email"></label><br><br>
-				City: <select name="city">
-				  <option value="1">San Francisco</option>
-				  <option value="2">Houston</option>
-				  <option value="3">New York</option>
-				  <option value="4">Chicago</option>
-				</select><br><br>
-				<label for="password">Password: <input type="password" name="password" id="password"></label><br><br>
-				<label for="c_password">Confirm password: <input type="password" name="c_password" id="c_password"></label><br><br>
-				<input class='button' type="submit" value="Register">
-			</form>
+			  <div class="row">
+			        <div class="input-field col s6">
+			          <input id="first_mail" type="text" class="validate">
+			          <label for="first_name" data-error="wrong" data-success="right">Name</label>
+			        </div>
+			</div>
+
+
+<!-- 			      City: <select name="city">
+                  <option value="1">San Francisco</option>
+                  <option value="2">Houston</option>
+                  <option value="3">New York</option>
+                  <option value="4">Chicago</option>
+                </select><br><br> -->
+			<a class='dropdown-button btn' href='#' data-activates='dropdown3'>City</a>
+			<ul id='dropdown3' class='dropdown-content'>
+				<li><a href="#!">San Francisco</a></li>
+				<li><a href="#!">Houston</a></li>
+				<li class="divider"></li>
+				<li><a href="#!">New York</a></li>
+				<li><a href="#!">Chicago</a></li>
+			</ul><br><br><br>
+
+			      <div class="row">
+			        <div class="input-field col s6">
+			          <input id="email" type="text" class="validate">
+			          <label for="email" data-error="wrong" data-success="right">Email</label>
+			        </div>
+			  		</div>
+
+			      <div class="row">
+			        <div class="input-field col s6">
+			          <input id="password" type="password" class="validate">
+			          <label for="password" data-error="wrong" data-success="right">Password</label>
+			        </div>
+			      </div>
+
+			      <div class="row">
+			        <div class="input-field col s6">
+			          <input id="c_password" type="password" class="validate">
+			          <label for="password" data-error="wrong" data-success="right">Confirm Password</label>
+			        </div>
+			      </div>
+
+		  		<a class="waves-effect waves-light btn" type="submit" value="Login">Register</a>
+<!-- 				<input class='button' type="submit" value="Register">
+ -->			</form>
+			</div>
 		</div>
-		<hr>
+	</div>
+
 	</body>
 </html>
