@@ -29,7 +29,7 @@ body {
 	padding-left: 25px;
 	border-radius: 10px;
 	opacity: 1.0;
-	height:auto;
+	height:500px;
 	width: 95%;
 	display: inline-block;
 }
@@ -48,7 +48,6 @@ body {
 
 h2 {
 	color: gray;
-	vertical-align: right;
 }
 
 p {
@@ -81,7 +80,7 @@ p {
 	padding: 20px;
 	border-radius: 10px;
 /*	width: 50px;*/
-	height: 600px;
+	height: 550px;
 }
 
 .hello{
