@@ -1,0 +1,16 @@
+html, body {
+  font-family: monaco;
+  text-align: center;
+}
+
+.log_reg {
+	display: inline-block;
+	text-align: left;
+	width: 305px;
+}
+
+.button{
+	width: 300px;
+	margin-bottom: 10px;
+	font-size: 20px;
+}

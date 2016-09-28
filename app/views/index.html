@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang='en'>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+		<title>Python Project</title>
+	</head>
+	<body>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					<p>{{ message }}</p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		<div class="log_reg">
+			<h2>Login</h2>
+			<form action='/login' method='POST'>
+				<label for="email">Email: <input type="text" name="email" id="email"></label><br><br>
+				<label for="password">Password: <input type="password" name="password" id="password"></label><br><br>
+				<input class='button' type="submit" value="Login">
+			</form>
+		</div>
+		<hr>
+		<div class="log_reg">
+			<h2>Register</h2>
+			<form action='/register' method='POST'>
+				<label for="first_name">First Name: <input type="text" name="first_name" id="first_name"></label><br><br>
+				<label for="last_name">Last Name: <input type="text" name="last_name" id="last_name"></label><br><br>
+				<label for="email">Email: <input type="text" name="email" id="email"></label><br><br>
+				<label for="password">Password: <input type="password" name="password" id="password"></label><br><br>
+				<label for="c_password">Confirm password: <input type="password" name="c_password" id="c_password"></label><br><br>
+				<input class='button' type="submit" value="Register">
+			</form>
+		</div>
+		<hr>
+	</body>
+</html>

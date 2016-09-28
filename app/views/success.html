@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+		<title>Python Project</title>
+		<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+	</head>
+	<body>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					<p>{{ message }}</p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		<h1>Success! Welcome {{ name }}</h1>
+		<p>Successfully {{ success_message }}!</p>
+		<form action='/update' method='get'>
+			<input class='button' type="submit" value="Update Account">
+		</form>
+		<br>
+		<form action='/delete' method='get'>
+			<input class='button' type="submit" value="Delete Account">
+		</form>
+		<br>
+		<form action='/logout' method='post'>
+			<input class='button' type="submit" value="Logout">
+		</form>
+	</body>
+</html>
