@@ -5,7 +5,7 @@ class User(Model):
 		super(User, self).__init__()
 
 	def get_user_by_email(self, email):
-		query = "SELECT first_name, last_name, email, password FROM users WHERE email = :email"
+		query = "SELECT name, email, password FROM users WHERE email = :email"
 		data = { 
 			'email': email
 		}
@@ -18,16 +18,16 @@ class User(Model):
 	def validate(self, user):
 		email_regex = re.compile(r"^[^@]+@[^@]+\.[^@]+$")
 		errors = []
-		if not user['first_name']:
-			errors.append('First name cannot be blank')
-		elif not user['last_name']:
-			errors.append('Last name cannot be blank')
-		elif len(user['first_name']) < 2 or len(user['last_name']) < 2:
+		if not user['name']:
+			errors.append('Name cannot be blank')
+		elif len(user['name']) < 2:
 			errors.append('Name must be at least 2 characters long')
 		if not user['email']:
 			errors.append('Email cannot be blank')
 		elif not email_regex.match(user['email']):
 			errors.append('Email format is not valid!')
+		if not user['city']:
+			errors.append('City cannot be blank')
 		if not user['password']:
 			errors.append('Password cannot be blank')
 		elif len(user['password']) < 8:
@@ -35,7 +35,6 @@ class User(Model):
 		elif user['password'] != user['c_password']:
 			errors.append('Password and confirmation do not match')		
 		return errors
-		
 
 	def add_user(self, user):
 		errors = self.validate(user)
@@ -46,11 +45,11 @@ class User(Model):
 			return {"status": False, "errors": errors}
 		else:
 			password_hash = self.bcrypt.generate_password_hash(user['password'])
-			query = "INSERT INTO users (first_name, last_name, email, password, created_at) VALUES (:first_name, :last_name, :email, :password, NOW())"
+			query = "INSERT INTO users (name, email, password, cities_id, created_at) VALUES (:name, :email, :password, :city, NOW())"
 			data = { 
-				'first_name': user['first_name'],
-				'last_name': user['last_name'], 
+				'name': user['name'], 
 				'email': user['email'],
+				'city': user['city'],
 				'password': password_hash 
 			}
 			self.db.query_db(query, data)
@@ -62,10 +61,9 @@ class User(Model):
 			return {"status": False, "errors": errors}
 		else:
 			password_hash = self.bcrypt.generate_password_hash(user['password'])
-			query = "UPDATE users SET first_name=:first_name, last_name=:last_name, email=:email, password=:password WHERE email = :email"
+			query = "UPDATE users SET name=:name, email=:email, password=:password WHERE email = :email"
 			data = { 
-				'first_name': user['first_name'], 
-				'last_name': user['last_name'], 
+				'name': user['name'],
 				'email': user['email'],
 				'password': password_hash
 			}

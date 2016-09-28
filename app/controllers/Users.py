@@ -26,9 +26,9 @@ class Users(Controller):
 
 	def register(self):
 		user_info = {
-			"first_name" : request.form['first_name'],
-			"last_name" : request.form['last_name'],
+			"name" : request.form['name'],
 			"email" : request.form['email'],
+			"city" : request.form['city'],
 			"password" : request.form['password'],
 			"c_password" : request.form['c_password']
 		}
@@ -45,7 +45,7 @@ class Users(Controller):
 
 	def success(self):
 		user = self.models['User'].get_user_by_email(session["email"])
-		session['name'] = user['first_name']
+		session['name'] = user['name']
 		return self.load_view('success.html', name=session['name'], success_message = session['success'])
 
 
@@ -56,9 +56,9 @@ class Users(Controller):
 
 	def update(self):
 		user_info = {
-			"first_name" : request.form['first_name'],
-			"last_name" : request.form['last_name'],
+			"name" : request.form['name'],
 			"email" : request.form['email'],
+			"city" : request.form['city'],
 			"password" : request.form['password'],
 			"c_password" : request.form['c_password']
 		}

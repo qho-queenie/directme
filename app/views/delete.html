@@ -8,8 +8,7 @@
 	<body>
 		<h1>Delete your account</h1>
 		<h4>Are you sure you want to delete your account?</h4>
-		<p>First Name: {{ user['first_name'] }}</p>
-		<p>Last Name: {{ user['last_name'] }}</p>
+		<p>Name: {{ user['name'] }}</p>
 		<p>Email: {{ user['email'] }}</p>
 		<form action='/delete/destroy' method='post'>
 			<button>Delete account</button>
