@@ -1,4 +1,16 @@
 from system.core.controller import *
+
+def warnjilly(method):
+  def wrapper(*args, **kwargs):
+    try:
+      return method(*args, **kwargs)
+    except Exception, e:
+      print '!!!! Oh no jilly, something went wrong !!!!'
+      print e
+  return wrapper
+
+
+
 class Users(Controller):
 	def __init__(self, action):
 		super(Users, self).__init__(action)
@@ -42,7 +54,7 @@ class Users(Controller):
 			session['success'] = 'registered'   
 			return redirect('/directme')
 
-
+	@warnjilly
 	def directme(self):
 		user = self.models['User'].get_user_by_email(session["email"])
 		# session['name'] = user['name']
