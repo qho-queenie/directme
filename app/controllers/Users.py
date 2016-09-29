@@ -44,9 +44,9 @@ class Users(Controller):
 
 
 	def directme(self):
-		# user = self.models['User'].get_user_by_email(session["email"])
+		user = self.models['User'].get_user_by_email(session["email"])
 		# session['name'] = user['name']
-		return self.load_view('directme.html', name=session['name'], success_message = session['success'])
+		return self.load_view('directme.html')
 
 
 	# def displayUpdate(self):

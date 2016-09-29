@@ -32,51 +32,49 @@
 	</div>	
 
 
+	<center>
+		<div class='container'>
+			<div class='box'>
+				<div class="log">
+					<h2>Login</h2>
+					<form action='/login' method='POST'>
+						<div class="row input-field col s12">
+							
+							  			<input type="text" name="email" id="email" class="validate">
+							  			<label for="email" data-error="wrong" data-success="right">Email</label>
+						 		
+					 	</div>
 
-	<center><div class='container'>
-		<div class='box'>
-			<div class="log">
-				<h2>Login</h2>
-				<form action='/login' method='POST'>
-					<div class="row input-field col s12">
-						
-						  			<input type="text" name="email" id="email" class="validate">
-						  			<label for="email" data-error="wrong" data-success="right">Email</label>
-					 		
-				 	</div>
-
-				 	<div class="row input-field col s12">
-								
-						  			<input type="password" name="password" id="password" class="validate">
-						  			<label for="password">Password</label>
-					  		
-				  	</div>
-					<!-- <a href="/login" class="waves-effect waves-light btn" type="submit" value="Login">Login</a> -->
-					<!-- <form action='/login' method='post'> -->
-						<input class='waves-effect waves-light btn' type="submit" value="Login">
-					<!-- </form> -->
-				</form>
-			</div>
+					 	<div class="row input-field col s12">
+									
+							  			<input type="password" name="password" id="password" class="validate">
+							  			<label for="password">Password</label>
+						  		
+					  	</div>
+						<!-- <a href="/login" class="waves-effect waves-light btn" type="submit" value="Login">Login</a> -->
+						<!-- <form action='/login' method='post'> -->
+							<input class='waves-effect waves-light btn' type="submit" value="Login">
+						<!-- </form> -->
+					</form>
+				</div>
 
 
-			<div class="reg">
-				<h2>Register</h2>
-				<form action='/register' method='POST'>
-				  	<div class="row">
+				<div class="reg">
+					<h2>Register</h2>
+					<form action='/register' method='POST'>
+					  	<div class="row input-field col s6">
+							  	<input type="text" name="name" id="name" class="validate">
+							  	<label for="name" data-error="wrong" data-success="right">Name</label>
+						</div>	
 						<div class="input-field col s6">
-						  	<input id="first_mail" type="text" class="validate">
-						  	<label for="first_name" data-error="wrong" data-success="right">Name</label>
-						</div>
-						<div class="input-field col s6">
-							<input id="email" type="text" class="validate">
+							<input type="text" name="email" id="email" class="validate">
 							<label for="email" data-error="wrong" data-success="right">Email</label>
 						</div>
-					</div>
+						
 
 
-					<div class="row">
-						<div class="input-field col s12">
-							<select>
+						<div class="row input-field col s12">
+							<select name="city" id="city">
 							  	<option value="" disabled selected>Cities</option>
 							  	<option value="1">San Francisco</option>
 							  	<option value="2">Chicago</option>
@@ -84,25 +82,24 @@
 							  	<option value="3">Houston</option>
 							</select>
 						</div>
-					</div>
 
-					<div class="row">
-						<div class="input-field col s6">
-							<input id="password" type="password" class="validate">
-							<label for="password" data-error="wrong" data-success="right">Password</label>
+						<div class="row input-field col s6">
+								<input type="password" name="password" id="password" class="validate">
+								<label for="password" data-error="wrong" data-success="right">Password</label>
 						</div>
 						<div class="input-field col s6">
-							<input id="c_password" type="password" class="validate">
+							<input type="password" name="c_password" id="c_password" class="validate">
 							<label for="password" data-error="wrong" data-success="right">Confirm Password</label>
+							
 						</div>
-					</div>
 
-					<a href="/register" class="waves-effect waves-light btn" type="submit" value="Login">Register</a>
-					<input class="waves-effect waves-light btn" type="submit" value="Register">
-			</form>
+	<!-- 					<a href="/register" class="waves-effect waves-light btn" type="submit" value="Login">Register</a>
+	-->					<input class="waves-effect waves-light btn" type="submit" value="Register">
+					</form>
+				</div>
 			</div>
 		</div>
-	</div></center>
+	</center>
 
 	</body>
 </html>
