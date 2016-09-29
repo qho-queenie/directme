@@ -24,12 +24,12 @@ class DevelopmentDBConfig(DBConfig):
 class StagingDBConfig(DBConfig):
     DB_USERNAME = 'root'
     DB_PASSWORD = 'root'
-    DB_DATABASE_NAME = 'pythonproject'
+    DB_DATABASE_NAME = 'direct_me'
     DB_HOST = 'localhost'
 
 """ Put Production Specific Configurations here """
 class ProductionDBConfig(DBConfig):
     DB_USERNAME = 'root'
     DB_PASSWORD = 'root'
-    DB_DATABASE_NAME = 'pythonproject'
+    DB_DATABASE_NAME = 'direct_me'
     DB_HOST = 'localhost'

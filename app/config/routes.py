@@ -20,7 +20,7 @@ routes['default_controller'] = 'Users'
 
 routes['POST']['/login'] = 'Users#login'
 routes['POST']['/register'] = 'Users#register'
-routes['GET']['/success'] = 'Users#success'
+routes['GET']['/directme'] = 'Users#directme'
 
 routes['GET']['/update'] = 'Users#displayUpdate'
 routes['POST']['/update/update_user'] = 'Users#update'

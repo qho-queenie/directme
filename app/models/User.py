@@ -1,5 +1,6 @@
 from system.core.model import Model
 import re
+
 class User(Model):
 	def __init__(self):
 		super(User, self).__init__()
@@ -55,25 +56,25 @@ class User(Model):
 			self.db.query_db(query, data)
 			return { "status": True }
 
-	def update_user(self, user):
-		errors = self.validate(user)
-		if errors:
-			return {"status": False, "errors": errors}
-		else:
-			password_hash = self.bcrypt.generate_password_hash(user['password'])
-			query = "UPDATE users SET name=:name, email=:email, password=:password WHERE email = :email"
-			data = { 
-				'name': user['name'],
-				'email': user['email'],
-				'password': password_hash
-			}
-			self.db.query_db(query, data)
-			return { "status": True }
+	# def update_user(self, user):
+	# 	errors = self.validate(user)
+	# 	if errors:
+	# 		return {"status": False, "errors": errors}
+	# 	else:
+	# 		password_hash = self.bcrypt.generate_password_hash(user['password'])
+	# 		query = "UPDATE users SET name=:name, email=:email, password=:password WHERE email = :email"
+	# 		data = { 
+	# 			'name': user['name'],
+	# 			'email': user['email'],
+	# 			'password': password_hash
+	# 		}
+	# 		self.db.query_db(query, data)
+	# 		return { "status": True }
 
-	def delete_user(self, email):
-		query = "DELETE FROM users WHERE email = :email"
-		data = { "email": email }
-		return self.db.query_db(query, data)
+	# def delete_user(self, email):
+	# 	query = "DELETE FROM users WHERE email = :email"
+	# 	data = { "email": email }
+	# 	return self.db.query_db(query, data)
 
 
 

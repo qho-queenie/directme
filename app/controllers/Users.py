@@ -21,7 +21,7 @@ class Users(Controller):
 		else:
 			session['email'] = email
 			session['success'] = 'logged in'
-			return redirect('/success')
+			return redirect('/directme')
 
 
 	def register(self):
@@ -40,48 +40,48 @@ class Users(Controller):
 		else:
 			session["email"] = request.form['email']
 			session['success'] = 'registered'   
-			return redirect('/success')
+			return redirect('/directme')
 
 
-	def success(self):
-		user = self.models['User'].get_user_by_email(session["email"])
-		session['name'] = user['name']
-		return self.load_view('success.html', name=session['name'], success_message = session['success'])
+	def directme(self):
+		# user = self.models['User'].get_user_by_email(session["email"])
+		# session['name'] = user['name']
+		return self.load_view('directme.html', name=session['name'], success_message = session['success'])
 
 
-	def displayUpdate(self):
-		user = self.models['User'].get_user_by_email(session['email'])
-		return self.load_view('update.html', user=user)
+	# def displayUpdate(self):
+	# 	user = self.models['User'].get_user_by_email(session['email'])
+	# 	return self.load_view('update.html', user=user)
 
 
-	def update(self):
-		user_info = {
-			"name" : request.form['name'],
-			"email" : request.form['email'],
-			"city" : request.form['city'],
-			"password" : request.form['password'],
-			"c_password" : request.form['c_password']
-		}
-		validations = self.models['User'].update_user(user_info)
-		if validations['status'] == False:
-			for message in validations['errors']:
-				flash(message, 'error')
-				return redirect('/update')
-		else:
-			session['success'] = 'updated account'
-			return redirect('/success')
+	# def update(self):
+	# 	user_info = {
+	# 		"name" : request.form['name'],
+	# 		"email" : request.form['email'],
+	# 		"city" : request.form['city'],
+	# 		"password" : request.form['password'],
+	# 		"c_password" : request.form['c_password']
+	# 	}
+	# 	validations = self.models['User'].update_user(user_info)
+	# 	if validations['status'] == False:
+	# 		for message in validations['errors']:
+	# 			flash(message, 'error')
+	# 			return redirect('/update')
+	# 	else:
+	# 		session['success'] = 'updated account'
+	# 		return redirect('/success')
 
 
-	def delete(self):
-		user = self.models['User'].get_user_by_email(session['email'])
-		return self.load_view('delete.html', user=user)
+	# def delete(self):
+	# 	user = self.models['User'].get_user_by_email(session['email'])
+	# 	return self.load_view('delete.html', user=user)
 
 
-	def destroy(self):
-		self.models['User'].delete_user(session['email'])
-		session.clear()
-		flash('Account successfully deleted')
-		return redirect('/')
+	# def destroy(self):
+	# 	self.models['User'].delete_user(session['email'])
+	# 	session.clear()
+	# 	flash('Account successfully deleted')
+	# 	return redirect('/')
 
 
 	def logout(self):
