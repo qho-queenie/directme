@@ -1,15 +1,17 @@
 * {
 	padding: 0px;
 	margin:0px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
+	
 	font-family: 'avant garde', sans-serif;
 }
 
 
 body {
 	width:auto;
+	background: url('http://i.imgur.com/Pwz5Xhx.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
 	height: auto;
 
 }
@@ -17,25 +19,26 @@ body {
 .weather {
 	color: white;
 	display: inline-block;
-	margin-left: 10px;
+	margin-left: 40px;
+	vertical-align: left;
 }
 
-.button{
+/*.button{
 	width: 300px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	font-size: 20px;
-}
+}*/
 
-h2 {
+/*h2 {
 	color: white;
 	font-size: 16px;
 	vertical-align: right;
 
-}
+}*/
 
-p {
+/*p {
 	font-size: 30px;
-}
+}*/
 
 #header {
 	display: relative;
@@ -43,10 +46,7 @@ p {
 	height: 100px;
 }
 
-.weather {
-	display: inline-block;
-	vertical-align: left;
-}
+
 .logo {
 	display: inline-block;
 	position: absolute;
@@ -72,6 +72,8 @@ p {
 	width: 80%;
 
 }
+
+
 
 .row{
 	background: rgba(255, 255, 255, 0.7);
@@ -106,22 +108,13 @@ p {
 	left: 300px;
 }*/
 
-.btn {
-	/*display: inline-block;*/
-	vertical-align: bottom;
-	width: 50%;
-	/*position: absolute;*/
-	/*bottom: 55px;
-	right: 270px;
-	width: 900px;*/
+#logout_button, #text_button, #direct_button {
+	font-size: 16px;
+	margin-top: 10px;
 }
 
-.button {
-	width: 80%;
-	font-size: 16px;
-	text-align: center;
-	padding-top: 10px;
-}
+
+
 
 .result {
 	font-size: 20px;

@@ -1,12 +1,13 @@
 <html>
 	<head>
 		<title>DirectMe</title>
+		<link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+
 		<link rel="stylesheet" type="text/css" href="../static/css/reset.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>       
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="../static/css/styles.css">
 		<script src="../static/css/directme.js"></script> 
 	</head>
 			
@@ -19,13 +20,25 @@
 	</script>  
 <body>
 
+	<div id="wrap">
+
+	<img src="http://i.imgur.com/AZ90hYU.jpg" />
+	<img src="http://i.imgur.com/ZE58bjz.jpg" />
+	<img src="http://i.imgur.com/atckXxP.jpg" />
+
+	</div>
+
+
+
+
+
 	<div id='header'>
 		<div class='weather'>
 			<img src={{image}}>
 			<h4><b>{{ temp }}°F</b></h4>
 			<h6>{{ weather }}</h6>
 			<form action='/logout' method='POST'>
-				<input class="waves-effect waves-light btn" type="submit" value="Logout">
+				<input id='logout_button' class="waves-effect waves-light btn" type="submit" value="Logout">
 			</form>
 		</div>
 		<div class='logo'>
@@ -75,7 +88,7 @@
 				</div>
 				<br><br><br>
 				
-				<input class="waves-effect waves-light btn" type="submit" value="DirectMe">
+				<input id='directme_button' class="waves-effect waves-light btn" type="submit" value="DirectMe">
 				<br>
 			</form>
 
@@ -83,9 +96,6 @@
 		</div>
 	</div>
    </center>
-
-
-
 
 
 </body>

@@ -8,26 +8,36 @@
       alignment: 'left' // Displays dropdown with edge aligned to the left of button
     }
   );
+
+
+$('img').hide();
+
+function anim() {
+    $("#wrap img").first().appendTo('#wrap').fadeOut(3000);
+    $("#wrap img").first().fadeIn(4000);    
+    setTimeout(anim, 4000);
+}
+anim();
         
 
-(function(){
-  var now, pics = {
-    rain: 'http://i.imgur.com/VIKAkHF.jpg',
-    perfect: 'http://i.imgur.com/TsmJjpn.jpg',
-    hot: 'http://i.imgur.com/25bal3D.jpg',
-    show: function(){
-      return now > 5 && now < 12? this.rain : now > 11 && now < 19? this.perfect : this.hot;
-    }
-  };
+// (function(){
+//   var now, pics = {
+    // rain: 'http://i.imgur.com/VIKAkHF.jpg',
+//     perfect: 'http://i.imgur.com/TsmJjpn.jpg',
+//     hot: 'http://i.imgur.com/25bal3D.jpg',
+//     show: function(){
+//       return now > 5 && now < 12? this.rain : now > 11 && now < 19? this.perfect : this.hot;
+//     }
+//   };
 
-  (function(){
-    now = new Date().getHours();
-    document.documentElement.style.backgroundImage = 'url(' + pics.show() + ')';
-    if(typeof pics.interval === 'undefined'){
-      pics.interval = setInterval(arguments.callee, 10000);
-    }
-  })();
-})();
+//   (function(){
+//     now = new Date().getHours();
+//     document.documentElement.style.backgroundImage = 'url(' + pics.show() + ')';
+//     if(typeof pics.interval === 'undefined'){
+//       pics.interval = setInterval(arguments.callee, 10000);
+//     }
+//   })();
+// })();
 
 // // Set speed (milliseconds)
 //   var speed = 3000
