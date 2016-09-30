@@ -21,12 +21,16 @@ routes['default_controller'] = 'Users'
 routes['POST']['/login'] = 'Users#login'
 routes['POST']['/register'] = 'Users#register'
 routes['GET']['/directme'] = 'Users#directme'
+routes['POST']['/random_choice'] = 'Users#random_choice'
+routes['POST']['/random_choice2'] = 'Users#random_choice2'
+routes['GET']['/destination'] = 'Users#destination'
 
-routes['GET']['/update'] = 'Users#displayUpdate'
-routes['POST']['/update/update_user'] = 'Users#update'
 
-routes['GET']['/delete'] = 'Users#delete'
-routes['POST']['/delete/destroy'] = 'Users#destroy'
+# routes['GET']['/update'] = 'Users#displayUpdate'
+# routes['POST']['/update/update_user'] = 'Users#update'
+
+# routes['GET']['/delete'] = 'Users#delete'
+# routes['POST']['/delete/destroy'] = 'Users#destroy'
 
 routes['POST']['/logout'] = 'Users#logout'
 

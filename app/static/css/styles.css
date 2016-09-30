@@ -46,7 +46,7 @@ p {
 .logo {
 	display: inline-block;
 	position: absolute;
-	right: 200px;
+	right: 300px;
 }
 
 .container {
@@ -64,7 +64,7 @@ p {
 
 }
 
-.row{
+.row2{
 	background: rgba(255, 255, 255, 0.7);
 	padding: 40px;
 	border-radius: 10px;
@@ -74,3 +74,14 @@ p {
 	display: inline-block;
 }
 
+.row {
+	width: 50%;
+	height: 15px;
+	margin-bottom: 0px;
+}
+
+.weather {
+	color: white;
+	margin-left: 10px;
+	text-align: center;
+}

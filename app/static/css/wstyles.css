@@ -13,6 +13,12 @@ body {
 
 }
 
+.weather {
+	color: white;
+	display: inline-block;
+	margin-left: 10px;
+}
+
 .button{
 	width: 300px;
 	margin-bottom: 10px;
@@ -42,7 +48,7 @@ p {
 .logo {
 	display: inline-block;
 	position: absolute;
-	right: 200px;
+	right: 300px;
 }
 
 .direct {
@@ -76,16 +82,34 @@ p {
 }
 
 .info {
-	width:50%;
+	width:20%;
 	height:95%;
-	background-color: red;
+	background-color: white;
 	display: inline-block;
 	vertical-align: top;
+	padding-right: 10px;
+	/*position: absolute;
+	right: 200px;*/
 }
 
 .map {
 	width: 45%;
 	height:95%;
-	background-color: blue;
 	display: inline-block;
+}
+
+/*iframe {
+	display: inline-block;
+	position: absolute;
+	left: 300px;
+}*/
+
+.buttons {
+	/*display: inline-block;*/
+	vertical-align: bottom;
+	width: 200%;
+	/*position: absolute;*/
+	/*bottom: 55px;
+	right: 270px;
+	width: 900px;*/
 }

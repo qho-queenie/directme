@@ -1,17 +1,69 @@
 <html>
 	<head>
 		<title>DirectMe</title>
+		<link rel="stylesheet" type="text/css" href="../static/css/reset.css">
 		<link rel="stylesheet" type="text/css" href="../static/css/wstyles.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>       
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 		<script src="../static/css/directme.js"></script> 
-	</head>
-			  
+
+		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+		<script>
+		$(document).ready(function() {
+			$('#send_text').submit(function() {
+
+				// Your Twilio credentials
+				var SID = "{{SID}}"
+				var Key = "{{Key}}"
+
+
+				var yelpName = "{{yelpName}}"
+				var yelpAddress = "{{address}}"
+				var myName = "{{myName}}"
+
+
+				$.ajax({
+					type: 'POST',
+					url: 'https://api.twilio.com/2010-04-01/Accounts/' + SID + '/Messages.json',
+					data: {
+						"To" : "+15108211109",
+						"From" : "+15108769419",
+						"Body" : "Hey " + myName + "! Let's go to " + yelpName + "! The address is " + yelpAddress + ". @DirectMe"
+					},
+					beforeSend: function (xhr) {
+						xhr.setRequestHeader ("Authorization", "Basic " + btoa(SID + ':' + Key));
+					},
+					success: function(data) {
+						console.log(data);
+					},
+					error: function(data) {
+						console.log(data);
+					}
+				});
+
+				return false;
+			});
+		})
+
+		</script>
+
+
+		</head>
+				  
 <body>
 
 	<div id='header'>
+		<div class='weather'>
+			<img src={{image}}>
+			<h4><b>{{ temp }}°F</b></h4>
+			<h6>{{ weather }}</h6>
+			<form action='/logout' method='POST'>
+				<input class="waves-effect waves-light btn" type="submit" value="Logout">
+			</form>
+		</div>
 		<div class='logo'>
 			<img class='direct' src="http://i.imgur.com/n26eoj9.png">
 		</div>
@@ -21,14 +73,51 @@
 	</div>
 
 	<div class="container"><center>
-		<div class="row"> 
-			<div class='map'> Put Google Map here</div>
-			<div class='info'>Today is a perfect day to: </div>
+		<div class="row">
+		<div class='map col s6 m6 l6'> 
+			<iframe
+			width=100%
+			height=100%
+			frameborder="0" style="border:0"
+			src="https://www.google.com/maps/embed/v1/place?q={{destination}}&key=AIzaSyDvR4OqyA3pxONqvIDqqtc5CfkS-GSjn_I" allowfullscreen>
+			</iframe>
+		</div>
+
+			<!-- <div class="container"><center>
+				<div class="row"> 
+					<div class='map'> Put Google Map here</div>
+					<div class='info'>Today is a perfect day to: </div>
+					<br><br>
+					<a class="waves-effect waves-light btn">Text me the info</a>
+					<a class="waves-effect waves-light btn">Text my friends</a>
+					<a class="waves-effect waves-light btn">DirectMe again</a>
+					<br>
+					</center>
+				</div>
+			</div>
+ -->
+
+
+
+		<div class='info col s6 m6 l6'> 
+		<br>
+			<h5><b>Today is the perfect day to go to: </b></h5>
 			<br><br>
-			<a class="waves-effect waves-light btn">Text me the info</a>
-			<a class="waves-effect waves-light btn">Text my friends</a>
-			<a class="waves-effect waves-light btn">DirectMe again</a>
-			<br>
+			<h5>Destination: {{ yelpName }}</h5>
+			<h5>Type: {{activity_type}}</h5>
+			<h5>Rating: {{rating}}/5.0</h5>
+			<h5>Price: {{ price }}</h5>
+			<h5><a href='{{website}}'>Yelp Page</a></h5>
+			<div class="buttons">
+				<form id='send_text' method='POST'>
+					<input class="waves-effect waves-light btn" type='submit' value='Text me the info'>
+				</form>
+				<form action='/random_choice2' method='POST'>
+					<input class="waves-effect waves-light btn" type="submit" value="DirectMe Again">
+				</form>
+				<br>
+			</div>
+		</div>
 			</center>
 		</div>
 	</div>

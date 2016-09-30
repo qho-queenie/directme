@@ -6,7 +6,7 @@ class User(Model):
 		super(User, self).__init__()
 
 	def get_user_by_email(self, email):
-		query = "SELECT name, email, password FROM users WHERE email = :email"
+		query = "SELECT name, email, password, cities_id FROM users WHERE email = :email"
 		data = { 
 			'email': email
 		}
