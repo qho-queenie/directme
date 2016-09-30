@@ -58,12 +58,13 @@ class Users(Controller):
 		else:
 			session["email"] = request.form['email']
 			session['success'] = 'registered'
-			session['city'] = (request.form('city')).replace(" ", "+")  
+			session['city'] = (request.form['city']).replace(" ", "+")  
 			return redirect('/directme')
 
 	# @warnjilly
 	def directme(self):
 		user = self.models['User'].get_user_by_email(session["email"])
+		session['cities_id'] = user['cities_id']
 		session['name'] = user['name'].title()
 		if session['cities_id'] == 1:
 			city_id = 5391959
@@ -79,13 +80,11 @@ class Users(Controller):
 		if "weather" in search and "main" in search:
 			weather = search['weather'][0]['description'].title()
 			temp = int(math.ceil((search['main']['temp']) * (9/5.0) - 459.67))
-			image = 'http://i.imgur.com/RXk50lO.png'
 		else:
 			weather = "Clear sky"
 			temp = 66
-			image = 'http://i.imgur.com/RXk50lO.png'
 		# print 'moo', self.load_view('directme.html', weather=weather, temp=temp)
-		return self.load_view('directme.html', weather=weather, temp=temp, image=image, name=session['name'])
+		return self.load_view('directme.html', weather=weather, temp=temp, name=session['name'])
 
 
 	@warnjilly
@@ -208,15 +207,13 @@ class Users(Controller):
 		if "weather" in search and "main" in search:
 			weather = search['weather'][0]['description'].title()
 			temp = int(math.ceil((search['main']['temp']) * (9/5.0) - 459.67))
-			image = 'http://i.imgur.com/RXk50lO.png'
 		else:
 			weather = "Clear sky"
 			temp = 66
-			image = 'http://i.imgur.com/RXk50lO.png'
 		image = 'http://i.imgur.com/RXk50lO.png'
 		SID = "ACa5bb3a96898a5cbf58db503767892b2d"
 		Key = "9cab74a9763d6d767886bb2d7d8a008c"
-		return self.load_view('weather.html', destination=session['destination'], SID=SID, Key=Key, myName=session['name'], yelpName=session['business_name'], address=session['address'], weather=weather, temp=temp, image=image, rating=session['rating'], price=session['price'], activity_type=session['activity_type'], website=session['website'])
+		return self.load_view('weather.html', destination=session['destination'], SID=SID, Key=Key, myName=session['name'], yelpName=session['business_name'], address=session['address'], weather=weather, temp=temp, rating=session['rating'], price=session['price'], activity_type=session['activity_type'], website=session['website'])
 
 
 

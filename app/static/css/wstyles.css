@@ -19,8 +19,9 @@ body {
 .weather {
 	color: white;
 	display: inline-block;
-	margin-left: 40px;
+	margin-left: 5px;
 	vertical-align: left;
+	text-align: center;
 }
 
 /*.button{
@@ -110,10 +111,13 @@ body {
 
 #logout_button, #text_button, #direct_button {
 	font-size: 16px;
-	margin-top: 10px;
+	padding-top: 10px;
 }
 
 
+input {
+	padding-top: 10px;
+}
 
 
 .result {

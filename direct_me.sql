@@ -4,7 +4,7 @@ USE `direct_me`;
 --
 -- Host: 127.0.0.1    Database: direct_me
 -- ------------------------------------------------------
--- Server version	5.6.28
+-- Server version	5.5.42
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -60,7 +60,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   KEY `fk_users_cities_idx` (`cities_id`),
   CONSTRAINT `fk_users_cities` FOREIGN KEY (`cities_id`) REFERENCES `cities` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +69,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,NULL,'kenny@gmail.com','kenny1',NULL,NULL,3),(2,NULL,'jill@gmail.com','jill1',NULL,NULL,2),(3,NULL,'devan@gmail.com','devan1',NULL,NULL,1),(4,NULL,'queenie@gmail.com','queenie1',NULL,NULL,4),(7,'venny vo','vennyvo@gmail.com','$2b$12$BBTALbTsWIuNhkfk/vk6eepIFMD7SpqD9sUVeEMoW9qElJ2HSRsR6','2016-09-28 13:51:09',NULL,1),(8,'henny ho','henny@gmail.com','$2b$12$yCDx6/ZQqrgAry37/qLNxu8KSP9.Hjc8REl4Lespyw/6M0.5OkmY2','2016-09-28 14:11:57',NULL,3),(9,'jenny jo','jenny@gmail.com','$2b$12$cklzghWE1gOYkfO2JIFC.e1nNnfUPB1d5GQPOJuiTQpkzBSjBp2S2','2016-09-28 14:12:44',NULL,1),(10,'tenny to','tenny@gmail.com','$2b$12$54FeEJebmVR63LW20zEBles1.AVva5dlE0DUoh4LJ4bzL.h9PH4Uu','2016-09-28 14:54:57',NULL,1);
+INSERT INTO `users` VALUES (20,'kenny ko','kenny@gmail.com','$2b$12$K2Zo0Zn8SpIek7bW0dwc1ujeHTG0ZM21ybM.AuIQNDlq8DLdc0DAe','2016-09-28 19:30:49',NULL,1),(21,'queenie ho','queenie@gmail.com','$2b$12$KnrW0tcEY7yPcYC9fOKh9unuPFs16zeDGUcN1DVlxNIYYc4F0NLYy','2016-09-28 19:31:32',NULL,2),(22,'devan wong','devan@gmail.com','$2b$12$xUf7QBIupbh9insDt2C/6.PMqCRJzN22mBe9K5N46.McWZaWftdU6','2016-09-28 19:52:05',NULL,3),(23,'jill robinson','jill@gmail.com','$2b$12$nQV94Ki3GIbJ.ExHJXCuY.cGYkcxGlBvY2BXdaikFwJoRgxVVnwka','2016-09-28 19:52:35',NULL,4),(24,'Daniel','danny@gmail.com','$2b$12$AeZBhqSGYpC1S/NQvetjwujS5S6AFhlrCWlUTl5FQqB14aLrD1NTW','2016-09-29 23:58:43',NULL,1),(27,'zippy','zippy@gmail.com','$2b$12$/1BgAVEEzfCSswfgVe30EO9DbDzhn5N67M0HPfPqsZeroKSwVUc6i','2016-09-30 00:06:05',NULL,3),(29,'noggin','noggin@gmail.com','$2b$12$lelYfaks1GTWnjkRUF74Aev/x.uWhxsjSql7Ns40M.EF9p31HrcAe','2016-09-30 07:25:13',NULL,2);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -82,4 +82,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-28 17:54:08
+-- Dump completed on 2016-09-30  8:54:35
