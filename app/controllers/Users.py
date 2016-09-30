@@ -61,7 +61,7 @@ class Users(Controller):
 			session['city'] = (request.form('city')).replace(" ", "+")  
 			return redirect('/directme')
 
-	@warnjilly
+	# @warnjilly
 	def directme(self):
 		user = self.models['User'].get_user_by_email(session["email"])
 		session['name'] = user['name'].title()
@@ -76,9 +76,14 @@ class Users(Controller):
 		response = requests.get("http://api.openweathermap.org/data/2.5/weather?id=%d&APPID=86487cba59a4c9fbbbcc3f25e61690f3" % city_id)
 		search = (response.json())
 		# pprint.pprint(search)
-		weather = search['weather'][0]['description'].title()
-		temp = int(math.ceil((search['main']['temp']) * (9/5.0) - 459.67))
-		image = 'http://i.imgur.com/RXk50lO.png'
+		if "weather" in search and "main" in search:
+			weather = search['weather'][0]['description'].title()
+			temp = int(math.ceil((search['main']['temp']) * (9/5.0) - 459.67))
+			image = 'http://i.imgur.com/RXk50lO.png'
+		else:
+			weather = "Clear sky"
+			temp = 66
+			image = 'http://i.imgur.com/RXk50lO.png'
 		# print 'moo', self.load_view('directme.html', weather=weather, temp=temp)
 		return self.load_view('directme.html', weather=weather, temp=temp, image=image, name=session['name'])
 
@@ -200,8 +205,14 @@ class Users(Controller):
 		response = requests.get("http://api.openweathermap.org/data/2.5/weather?id=%d&APPID=86487cba59a4c9fbbbcc3f25e61690f3" % city_id)
 		search = (response.json())
 		# pprint.pprint(search)
-		weather = search['weather'][0]['description'].title()
-		temp = int(math.ceil((search['main']['temp']) * (9/5.0) - 459.67))
+		if "weather" in search and "main" in search:
+			weather = search['weather'][0]['description'].title()
+			temp = int(math.ceil((search['main']['temp']) * (9/5.0) - 459.67))
+			image = 'http://i.imgur.com/RXk50lO.png'
+		else:
+			weather = "Clear sky"
+			temp = 66
+			image = 'http://i.imgur.com/RXk50lO.png'
 		image = 'http://i.imgur.com/RXk50lO.png'
 		SID = "ACa5bb3a96898a5cbf58db503767892b2d"
 		Key = "9cab74a9763d6d767886bb2d7d8a008c"
