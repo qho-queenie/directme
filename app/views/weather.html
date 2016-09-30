@@ -61,7 +61,7 @@
 			<h4><b>{{ temp }}°F</b></h4>
 			<h6>{{ weather }}</h6>
 			<form action='/logout' method='POST'>
-				<input class="waves-effect waves-light btn" type="submit" value="Logout">
+				<input class="waves-effect waves-light btn button" type="submit" value="Logout">
 			</form>
 		</div>
 		<div class='logo'>
@@ -103,15 +103,15 @@
 		<br>
 			<h5><b>Today is the perfect day to go to: </b></h5>
 			<br><br>
-			<h5>Destination: {{ yelpName }}</h5>
-			<h5>Type: {{activity_type}}</h5>
-			<h5>Rating: {{rating}}/5.0</h5>
-			<h5>Price: {{ price }}</h5>
-			<h5><a href='{{website}}'>Yelp Page</a></h5>
+			<h5 class="result">Destination: {{ yelpName }}</h5>
+			<h5 class="result">Type: {{activity_type}}</h5>
+			<h5 class="result">Rating: {{rating}}/5.0</h5>
+			<h5 class="result">Price: {{ price }}</h5>
+			<h5 class="result"><a href='{{website}}'>Yelp Page</a></h5>
 			<div class="buttons">
 				<form id='send_text' method='POST'>
 					<input class="waves-effect waves-light btn" type='submit' value='Text me the info'>
-				</form>
+				</form><br>
 				<form action='/random_choice2' method='POST'>
 					<input class="waves-effect waves-light btn" type="submit" value="DirectMe Again">
 				</form>

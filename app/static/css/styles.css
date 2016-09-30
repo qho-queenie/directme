@@ -4,6 +4,7 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
+	font-family: 'arial narrow', sans-serif;
 }
 
 
@@ -13,10 +14,11 @@ body {
 }
 
 
-.button{
-	width: 300px;
-	margin-bottom: 10px;
-	font-size: 20px;
+.btn{
+	/*width: 300px;*/
+	padding-top: 10px;
+	font-size: 15px;
+	text-align: center;
 }
 
 h2 {
@@ -30,6 +32,7 @@ p {
 
 #header {
 	display: relative;
+	background: 255,255,255,0.0;
 	width: auto;
 	height: 100px;
 }
@@ -51,14 +54,14 @@ p {
 
 .container {
 	background: rgba(255, 255, 255, 0.5);
-	padding: 25px;
+	padding: 15px;
 	border-radius: 10px;
 /*	width: 50px;*/
 	height: 600px;
 }
 
 .hello{
-	background: rgba(255, 255, 255, 0.7);
+	background: rgba(255, 255, 255, 0);
 	border-radius: 10px;
 	width: 95%;
 

@@ -4,6 +4,7 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
+	font-family: 'avant garde', sans-serif;
 }
 
 
@@ -27,6 +28,7 @@ body {
 
 h2 {
 	color: white;
+	font-size: 16px;
 	vertical-align: right;
 
 }
@@ -104,12 +106,23 @@ p {
 	left: 300px;
 }*/
 
-.buttons {
+.btn {
 	/*display: inline-block;*/
 	vertical-align: bottom;
-	width: 200%;
+	width: 50%;
 	/*position: absolute;*/
 	/*bottom: 55px;
 	right: 270px;
 	width: 900px;*/
+}
+
+.button {
+	width: 80%;
+	font-size: 16px;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.result {
+	font-size: 20px;
 }

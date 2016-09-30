@@ -4,6 +4,7 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
+	font-family: 'arial narrow', sans-serif;
 }
 
 
@@ -48,6 +49,8 @@ body {
 
 h2 {
 	color: gray;
+	margin-top: 10px;
+	margin-bottom: 5px;
 }
 
 p {
@@ -96,6 +99,8 @@ p {
 	text-align: left;
 }
 
-
+.log .row {
+	margin-bottom: 40px;
+}
 
 
