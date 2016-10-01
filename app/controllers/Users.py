@@ -210,7 +210,6 @@ class Users(Controller):
 		else:
 			weather = "Clear sky"
 			temp = 66
-		image = 'http://i.imgur.com/RXk50lO.png'
 		SID = "ACa5bb3a96898a5cbf58db503767892b2d"
 		Key = "9cab74a9763d6d767886bb2d7d8a008c"
 		return self.load_view('weather.html', destination=session['destination'], SID=SID, Key=Key, myName=session['name'], yelpName=session['business_name'], address=session['address'], weather=weather, temp=temp, rating=session['rating'], price=session['price'], activity_type=session['activity_type'], website=session['website'])
